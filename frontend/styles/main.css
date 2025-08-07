@@ -1,0 +1,192 @@
+/* 制程可靠性数据分析系统样式 */
+
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* 头部样式 */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #34495e;
+}
+
+/* 主要内容样式 */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background-color: white;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+/* 筛选控件样式 */
+.filter-controls, .report-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #ecf0f1;
+    border-radius: 4px;
+}
+
+.filter-controls label, .report-controls label {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.filter-controls input, .filter-controls select, .report-controls input, .report-controls select {
+    padding: 0.5rem;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+}
+
+.filter-controls button, .report-controls button {
+    padding: 0.5rem 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-controls button:hover, .report-controls button:hover {
+    background-color: #2980b9;
+}
+
+/* 数据表格样式 */
+.data-table {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #bdc3c7;
+}
+
+table th {
+    background-color: #3498db;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+table tr:hover {
+    background-color: #e8f4f8;
+}
+
+/* 图表容器样式 */
+.chart-container {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-container canvas {
+    max-width: 100%;
+}
+
+/* 报告预览样式 */
+.report-preview {
+    min-height: 300px;
+    border: 1px dashed #bdc3c7;
+    border-radius: 4px;
+    padding: 1rem;
+    background-color: #fff;
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #2c3e50;
+    color: white;
+    margin-top: 2rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 0.25rem 0;
+    }
+    
+    .filter-controls, .report-controls {
+        flex-direction: column;
+    }
+    
+    main {
+        padding: 0 0.5rem;
+    }
+}

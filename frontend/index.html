@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>制程可靠性数据分析系统</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <h1>制程可靠性数据分析系统</h1>
+        <nav>
+            <ul>
+                <li><a href="#hci-nbti">HCI&amp;NBTI数据</a></li>
+                <li><a href="#vrdb">VRDB数据</a></li>
+                <li><a href="#tddb">TDDB数据</a></li>
+                <li><a href="#reports">报告生成</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="hci-nbti">
+            <h2>HCI&NBTI数据分析</h2>
+            <div class="filter-controls">
+                <label for="lot-id">Lot ID:</label>
+                <input type="text" id="lot-id" name="lot-id">
+                
+                <label for="device-name">设备名称:</label>
+                <input type="text" id="device-name" name="device-name">
+                
+                <button id="search-hci-nbti">查询</button>
+                <button id="export-hci-nbti">导出Excel</button>
+            </div>
+            <div class="data-table" id="hci-nbti-table">
+                <!-- HCI&NBTI数据表格将在这里显示 -->
+            </div>
+        </section>
+        
+        <section id="vrdb">
+            <h2>VRDB数据分析</h2>
+            <div class="filter-controls">
+                <label for="vrdb-device-id">设备ID:</label>
+                <input type="text" id="vrdb-device-id" name="vrdb-device-id">
+                
+                <label for="date-range">日期范围:</label>
+                <input type="date" id="start-date"> 至 <input type="date" id="end-date">
+                
+                <button id="search-vrdb">查询</button>
+                <button id="export-vrdb">导出数据</button>
+                <button id="show-scatter-plot">显示散点图</button>
+            </div>
+            <div class="data-table" id="vrdb-table">
+                <!-- VRDB数据表格将在这里显示 -->
+            </div>
+            <div class="chart-container" id="scatter-plot">
+                <!-- 散点图将在这里显示 -->
+            </div>
+        </section>
+        
+        <section id="tddb">
+            <h2>TDDB数据分析</h2>
+            <div class="filter-controls">
+                <label for="tddb-wafer-id">Wafer ID:</label>
+                <input type="text" id="tddb-wafer-id" name="tddb-wafer-id">
+                
+                <label for="tddb-date-range">日期范围:</label>
+                <input type="date" id="tddb-start-date"> 至 <input type="date" id="tddb-end-date">
+                
+                <button id="search-tddb">查询</button>
+                <button id="export-tddb">导出数据</button>
+                <button id="show-scatter-plot-tddb">显示散点图</button>
+                <button id="show-wafer-heatmap">显示Wafer热力图</button>
+            </div>
+            <div class="data-table" id="tddb-table">
+                <!-- TDDB数据表格将在这里显示 -->
+            </div>
+            <div class="chart-container" id="tddb-scatter-plot">
+                <!-- TDDB散点图将在这里显示 -->
+            </div>
+            <div class="chart-container" id="wafer-heatmap">
+                <!-- Wafer热力图将在这里显示 -->
+            </div>
+        </section>
+        
+        <section id="reports">
+            <h2>报告生成</h2>
+            <div class="report-controls">
+                <label for="reportType">报告类型:</label>
+                <select id="reportType">
+                    <option value="comprehensive">综合报告</option>
+                    <option value="hci_nbti">HCI&NBTI报告</option>
+                    <option value="vrdb">VRDB报告</option>
+                    <option value="tddb">TDDB报告</option>
+                </select>
+                
+                <label for="reportStartDate">开始日期:</label>
+                <input type="date" id="reportStartDate">
+                
+                <label for="reportEndDate">结束日期:</label>
+                <input type="date" id="reportEndDate">
+                
+                <button id="generate-report" onclick="generateReport()">生成报告</button>
+                <button onclick="downloadReport()">下载报告</button>
+                <input type="hidden" id="generatedReportFilename">
+            </div>
+            <div class="report-preview" id="report-preview">
+                <!-- 报告预览将在这里显示 -->
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 制程可靠性数据分析系统</p>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
