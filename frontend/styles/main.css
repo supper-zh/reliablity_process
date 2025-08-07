@@ -8,167 +8,267 @@
 }
 
 body {
-    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    font-family: 'Segoe UI', 'Microsoft YaHei', Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f5f5f5;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
 /* 头部样式 */
 header {
-    background-color: #2c3e50;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     color: white;
     padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 header h1 {
     text-align: center;
     margin-bottom: 1rem;
+    font-size: 2.2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0 1rem;
+    margin: 0.5rem 1rem;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 500;
 }
 
 nav ul li a:hover {
-    background-color: #34495e;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* 主要内容样式 */
 main {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 2rem auto;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
 }
 
 section {
-    background-color: white;
+    background: rgba(255, 255, 255, 0.95);
     margin-bottom: 2rem;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
 }
 
 section h2 {
     color: #2c3e50;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.75rem;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+}
+
+section h2::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #3498db;
+    border-radius: 50%;
+    margin-right: 12px;
 }
 
 /* 筛选控件样式 */
 .filter-controls, .report-controls {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.2rem;
     margin-bottom: 1.5rem;
-    padding: 1rem;
-    background-color: #ecf0f1;
-    border-radius: 4px;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f1 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .filter-controls label, .report-controls label {
-    font-weight: bold;
+    font-weight: 600;
     color: #2c3e50;
+    display: flex;
+    align-items: center;
+    min-width: 100px;
 }
 
 .filter-controls input, .filter-controls select, .report-controls input, .report-controls select {
-    padding: 0.5rem;
-    border: 1px solid #bdc3c7;
-    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 1rem;
+    min-width: 150px;
+}
+
+.filter-controls input:focus, .filter-controls select:focus, 
+.report-controls input:focus, .report-controls select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
 }
 
 .filter-controls button, .report-controls button {
-    padding: 0.5rem 1rem;
-    background-color: #3498db;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .filter-controls button:hover, .report-controls button:hover {
-    background-color: #2980b9;
+    background: linear-gradient(135deg, #2980b9 0%, #2573a7 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+}
+
+.filter-controls button:active, .report-controls button:active {
+    transform: translateY(0);
 }
 
 /* 数据表格样式 */
 .data-table {
     overflow-x: auto;
+    margin-top: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 table th, table td {
-    padding: 0.75rem;
+    padding: 1rem;
     text-align: left;
-    border-bottom: 1px solid #bdc3c7;
+    border-bottom: 1px solid #eee;
 }
 
 table th {
-    background-color: #3498db;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
     color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+table tr:last-child td {
+    border-bottom: none;
 }
 
 table tr:nth-child(even) {
-    background-color: #f8f9fa;
+    background-color: #f8fafc;
 }
 
 table tr:hover {
-    background-color: #e8f4f8;
+    background-color: #e3f2fd;
+    transform: scale(1.01);
+    transition: background-color 0.2s;
 }
 
 /* 图表容器样式 */
 .chart-container {
     margin-top: 1.5rem;
-    padding: 1rem;
-    background-color: #fff;
-    border: 1px solid #bdc3c7;
-    border-radius: 4px;
-    min-height: 400px;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    min-height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid #eee;
 }
 
 .chart-container canvas {
     max-width: 100%;
+    max-height: 400px;
+}
+
+.chart-placeholder {
+    text-align: center;
+    color: #7f8c8d;
+    font-style: italic;
 }
 
 /* 报告预览样式 */
 .report-preview {
-    min-height: 300px;
-    border: 1px dashed #bdc3c7;
-    border-radius: 4px;
-    padding: 1rem;
-    background-color: #fff;
+    min-height: 350px;
+    border: 2px dashed #3498db;
+    border-radius: 12px;
+    padding: 1.5rem;
+    background: white;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 /* 页脚样式 */
 footer {
     text-align: center;
-    padding: 1rem;
-    background-color: #2c3e50;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.7);
     color: white;
-    margin-top: 2rem;
+    margin-top: 3rem;
+    backdrop-filter: blur(10px);
+}
+
+/* 加载动画 */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
 /* 响应式设计 */
@@ -188,5 +288,48 @@ footer {
     
     main {
         padding: 0 0.5rem;
+    }
+    
+    section {
+        padding: 1.5rem;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .filter-controls input, .filter-controls select, 
+    .report-controls input, .report-controls select {
+        min-width: 100%;
+    }
+    
+    .filter-controls label, .report-controls label {
+        min-width: auto;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 0 0.25rem;
+    }
+    
+    section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .filter-controls, .report-controls {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    table th, table td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.9rem;
     }
 }
